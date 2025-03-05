@@ -4843,7 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421844375423737611}
   m_Layer: 0
-  m_Name: Tree
+  m_Name: TreeInWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
