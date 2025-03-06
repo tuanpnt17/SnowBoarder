@@ -21,8 +21,17 @@ public class MenuManager : MonoBehaviour
         //Giả sử người chơi đạt 120 điểm
         //int currentScore = 120;
         //scoreManager.SaveBestScore(currentScore);
-        int bestScore = bestScoreManager.LoadBestScore();
+
         //int bestScore = ScoreManager.Instance.LoadBestScore();
+
+        if (SceneManager.GetActiveScene().name.Equals("EndGame"))
+        {
+            var currentScore = GameManager.Instance.GetCurrentScore();
+            CurrentScore.text = currentScore.ToString();
+            bestScoreManager.SaveBestScore(currentScore);
+            GameManager.Instance.ResetAll();
+        }
+        int bestScore = bestScoreManager.LoadBestScore();
         HighestScore.text = bestScore.ToString();
     }
 
@@ -56,7 +65,7 @@ public class MenuManager : MonoBehaviour
         HighestScore = s;
     }
 
-    public void SetCurrentScore(TextMeshProUGUI s)
+    public void SetCurrentScore(int s)
     {
         CurrentScore.text = s.ToString();
     }
