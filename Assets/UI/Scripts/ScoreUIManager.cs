@@ -10,8 +10,9 @@ public class ScoreUIManager : MonoBehaviour
     private static ScoreUIManager instance;
     private int score = 0;
     private string[] gameScenes = { "Level_01", "Level_02", "Level_03" };
-    private int maxHealth = 2;
+    private int maxHealth = 3;
     private int currentHealth;
+    private Texture2D snowflakeTexture;
     void Awake()
     {
         if (instance == null)
@@ -25,6 +26,11 @@ public class ScoreUIManager : MonoBehaviour
             return;
         }
         currentHealth = maxHealth;
+        snowflakeTexture = Resources.Load<Texture2D>("snowflake");
+        if (snowflakeTexture == null)
+        {
+            UnityEngine.Debug.LogError("Không tìm thấy ảnh snowflake trong Resources!");
+        }
     }
 
     void OnEnable()
@@ -48,8 +54,6 @@ public class ScoreUIManager : MonoBehaviour
             UnityEngine.Debug.LogError("Không tìm th?y health");
             return;
         }
-        UpdateScore(100);
-        ResetHealth();
     }
 
     void OnDestroy()
@@ -63,19 +67,18 @@ public class ScoreUIManager : MonoBehaviour
         {
             ResetScore();
             ResetHealth();
-            UpdateHealth(2);
-            //UpdateScore(0);    
-            UpdateHealthUI();
         }
-        //    if (System.Array.Exists(gameScenes, level => level == scene.name))
-        //    {
-        //        gameObject.SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        gameObject.SetActive(false);
-        //    }
-        gameObject.SetActive(true);
+        //if (System.Array.Exists(gameScenes, level => level == scene.name))
+        //{
+        //    gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    gameObject.SetActive(false);
+        //}
+        bool isGameScene = System.Array.Exists(gameScenes, level => level == scene.name);
+        gameObject.SetActive(isGameScene);
+
     }
 
     public void UpdateScore(int newScore)
@@ -109,14 +112,6 @@ public class ScoreUIManager : MonoBehaviour
         // Xóa toàn bộ icon cũ
         healthContainer.Clear();
 
-
-        Texture2D snowflakeTexture = Resources.Load<Texture2D>("snowflake");
-        if (snowflakeTexture == null)
-        {
-            UnityEngine.Debug.LogError("Không tìm thấy ảnh snowflake trong Resources!");
-            return;
-        }
-
         for (int i = 0; i < currentHealth; i++)
         {
             VisualElement snowflake = new VisualElement();
@@ -128,7 +123,6 @@ public class ScoreUIManager : MonoBehaviour
 
             healthContainer.Add(snowflake);
         }
-        UnityEngine.Debug.Log($"HealthContainer hiện có {healthContainer.childCount} phần tử");
     }
 
     /// <summary>
@@ -139,21 +133,8 @@ public class ScoreUIManager : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UpdateHealthUI();
 
-        if (currentHealth == 0)
-        {
-            GameOver();
-        }
-    }
 
-    /// <summary>
-    /// Hàm gọi khi hết tim.
-    /// </summary>
-    private void GameOver()
-    {
-        UnityEngine.Debug.Log("Game Over! Hết tim!");
-        // Thêm logic như load lại màn chơi hoặc hiển thị thông báo
     }
-
     /// <summary>
     /// Reset số tim về mặc định.
     /// </summary>
