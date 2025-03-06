@@ -39,9 +39,21 @@ public class GameManager : MonoBehaviour
         return _currentScore;
     }
 
+    public void ResetAll()
+    {
+        _currentScore = 0;
+        _currentHealth = _maxHealth;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
     public void HandleCrash()
     {
         _currentHealth--;
+        ScoreUIManager.Instance.UpdateHealthUI(_currentHealth);
         if (_currentHealth > 0)
         {
             Invoke(nameof(ReloadCurrentScene), _loadDelay);
@@ -73,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     private void Endgame()
     {
-        SceneManager.LoadScene("Endgame");
+        SceneManager.LoadScene("EndGame");
     }
 
     private void ChangeScore(int scoreChange)
@@ -81,6 +93,7 @@ public class GameManager : MonoBehaviour
         _currentScore += scoreChange;
         Debug.Log("Score: " + _currentScore);
         // Update UI
+        ScoreUIManager.Instance.UpdateScore(_currentScore);
     }
 
     private void CreateFloatingScore(int score, Vector3 pos)
