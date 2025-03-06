@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         GameObject floatingPoints = Instantiate(_floatingPointsPrefab, pos, Quaternion.identity);
         TextMesh textMesh = floatingPoints.GetComponentInChildren<TextMesh>();
         textMesh.text = (score >= 0 ? "+" : "") + score;
-        textMesh.color = (score >= 0) ? Color.green : Color.red;
+        //textMesh.color = (score >= 0) ? Color.magenta : Color.red;
         Destroy(floatingPoints, 1f);
     }
 }
