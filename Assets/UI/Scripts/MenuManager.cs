@@ -1,6 +1,4 @@
-﻿
-using System.Diagnostics;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +15,6 @@ public class MenuManager : MonoBehaviour
 
         if (bestScoreManager == null)
         {
-            
             return;
         }
 
@@ -26,14 +23,16 @@ public class MenuManager : MonoBehaviour
         //scoreManager.SaveBestScore(currentScore);
         int bestScore = bestScoreManager.LoadBestScore();
         //int bestScore = ScoreManager.Instance.LoadBestScore();
-        HighestScore.text = bestScore.ToString();       
+        HighestScore.text = bestScore.ToString();
     }
+
     public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
     }
+
     public void OnInstructionPress()
-    { 
+    {
         instructionUI.SetActive(true);
     }
 
@@ -44,19 +43,19 @@ public class MenuManager : MonoBehaviour
 
     public void OnPlayPress()
     {
-       
-        //SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level_01");
     }
 
     public void OnExitPress()
     {
         Application.Quit();
     }
-   
+
     public void SetHighestScore(TextMeshProUGUI s)
     {
         HighestScore = s;
     }
+
     public void SetCurrentScore(TextMeshProUGUI s)
     {
         CurrentScore.text = s.ToString();
