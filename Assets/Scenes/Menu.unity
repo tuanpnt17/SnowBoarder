@@ -943,10 +943,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " CONTROLS\n\r\n- Move Left: [\u2190] or [A]\r\n- Move Right: [\u2192]
-    or [D]\r\n- Jump: [Space]\r\n- Dash: [Shift]\n\n OBJECTIVE\n\n- Reach the finish
-    line\n- Avoid obstacles\n- Collect snowflakes to gain points\n- Complete all
-    3 levels!\r\n"
+  m_text: " CONTROLS\n\r\n- Move Left: A or Left Arrow\r\n- Move Right: D or Right
+    Arrow\r\n- Move Forward: W or Up Arrow\n\n OBJECTIVE\n\n- Reach the finish flag\n-
+    Complete all 3 levels!\n- Players gain +10 points for every coin they collect.\r\n-
+    Performing a 360-degree flip grants +50 points\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96d597c82314b684ab9b9a5b9c1a317a, type: 2}
   m_sharedMaterial: {fileID: -8201099655942785041, guid: 96d597c82314b684ab9b9a5b9c1a317a, type: 2}
@@ -1325,6 +1325,7 @@ GameObject:
   - component: {fileID: 814523945}
   - component: {fileID: 814523944}
   - component: {fileID: 814523946}
+  - component: {fileID: 814523947}
   m_Layer: 5
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -1378,6 +1379,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbee2817954e47b4295d5264b08468cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &814523947
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814523943}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 478198d21fb3e554480a0ce5a8bea17e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 478198d21fb3e554480a0ce5a8bea17e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.601
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &926960064
 GameObject:
   m_ObjectHideFlags: 0
