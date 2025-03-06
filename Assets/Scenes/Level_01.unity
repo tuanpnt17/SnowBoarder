@@ -1901,7 +1901,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 12.91, y: 5.5, z: -10}
+  FollowOffset: {x: 13, y: 5.5, z: -10}
 --- !u!114 &613311532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1954,7 +1954,7 @@ Transform:
   m_GameObject: {fileID: 613311529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.114501, y: 32.15091, z: -10}
+  m_LocalPosition: {x: -5.026046, y: 32.134304, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2821,7 +2821,7 @@ Transform:
   m_GameObject: {fileID: 913580307}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000012340266, y: -3.7600184e-23, z: 4.6399626e-31, w: 1}
-  m_LocalPosition: {x: -5.114501, y: 32.15091, z: -10}
+  m_LocalPosition: {x: -5.026046, y: 32.134304, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6375,7 +6375,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlagNextLevel
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8928863011552641384, guid: 65b54850c64a15f488fe14cc57c06735, type: 3}
+      propertyPath: SceneName
+      value: Level_02
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6882517890299480271, guid: 65b54850c64a15f488fe14cc57c06735, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
