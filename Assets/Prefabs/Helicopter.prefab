@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 3547716156358417197, guid: da4d1507f5c885c4aa42bd4761d282c8, type: 3}
+  m_Sprite: {fileID: 3547716156358417197, guid: 20aae72fd2c6f3049b60ded8a461b28b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,12 +167,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -806603090, guid: 253c44f26607e0d47bcb981a1a05ca98, type: 3}
+  m_Sprite: {fileID: 2340988923651444758, guid: 9330aa1bf8d765b4f850883a446dd86d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.46, y: 3.62}
+  m_Size: {x: 13.275, y: 7.425}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,7 +188,7 @@ Animator:
   m_GameObject: {fileID: 2479748040726969670}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c8506dd7ce37fbb4d92e006a8f3e33cf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 982dc59d7dc96fa4b99bfdc9e545f7aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -210,8 +210,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f31c7846b869e1a4f94bbce552df274b, type: 3}
-  m_Resource: {fileID: 8300000, guid: f31c7846b869e1a4f94bbce552df274b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cccdebfe6b0ee274c94937c8184a80f6, type: 3}
+  m_Resource: {fileID: 8300000, guid: cccdebfe6b0ee274c94937c8184a80f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -306,11 +306,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2479748040726969670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0056f43867f975943804dbab145357c5, type: 3}
+  m_Script: {fileID: 11500000, guid: e07fc81bee8642d45b9e6dee013fdd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 4881048444240831289}
-  _dropDelay: 2
+  _dropDelay: 1.5
   _moveSpeed: 5
 --- !u!1 &3970353038887760512
 GameObject:
@@ -388,7 +388,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 4642627619033717373, guid: d8c292725eee90c4da3802611d4a056d, type: 3}
+  m_Sprite: {fileID: 4642627619033717373, guid: f3d97cbe9fdf8e14589ba7178db6b660, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -429,7 +429,7 @@ Transform:
   m_GameObject: {fileID: 4881048444240831289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.092656836, w: 0.99569815}
-  m_LocalPosition: {x: -0.61, y: -1.23, z: 0}
+  m_LocalPosition: {x: -0.59, y: -1.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4881048444240831289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff63d93e62109c149a5cc7aa0071e861, type: 3}
+  m_Script: {fileID: 11500000, guid: d711856cfe5918b4f9f293b9b6ab0d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _torqueAmount: 20
@@ -547,12 +547,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4881048444240831289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 049540a327cb95d40b6544ba4403fb71, type: 3}
+  m_Script: {fileID: 11500000, guid: 750c2cee1c559464d98040283451f1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helmetPrefab: {fileID: 5366812862950149295, guid: 503b2e2892f5dc44e827ab8e8b53bf32, type: 3}
+  _helmetPrefab: {fileID: 5366812862950149295, guid: 8073115eef9956f43895befb7f85d4ec, type: 3}
   _helmetDuration: 10
-  _collectSound: {fileID: 8300000, guid: 33e7054e5e8e71143bc70dc33dd80795, type: 3}
+  _collectSound: {fileID: 8300000, guid: b8ab0279699c59549a7585820886e0c6, type: 3}
 --- !u!82 &9181045552623199359
 AudioSource:
   m_ObjectHideFlags: 0
@@ -730,11 +730,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5183556166917350573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 868395db4a923dd4dbfcbb3d4bf3c978, type: 3}
+  m_Script: {fileID: 11500000, guid: e0623142ea17f0d4d8fece2d2a4f0995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _crashEffect: {fileID: 576459042384120395}
-  _crashSFX: {fileID: 8300000, guid: 1c291304f7af1a84c80198e9cae50414, type: 3}
+  _crashSFX: {fileID: 8300000, guid: 446bd45c05631f74b8d4bdf464297e62, type: 3}
 --- !u!82 &3693401793411064540
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10578,7 +10578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8858817860255614639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb85122208928849aadee4a0292addb, type: 3}
+  m_Script: {fileID: 11500000, guid: d461cb293eab82c468cff075a375bde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _dustParticles: {fileID: 1807940410076570498}
