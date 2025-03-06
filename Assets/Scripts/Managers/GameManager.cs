@@ -39,19 +39,29 @@ public class GameManager : MonoBehaviour
         return _currentScore;
     }
 
+    public void ResetAll()
+    {
+        _currentScore = 0;
+        _currentHealth = _maxHealth;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
     public void HandleCrash()
     {
         _currentHealth--;
+        ScoreUIManager.Instance.UpdateHealthUI(_currentHealth);
         if (_currentHealth > 0)
         {
-            skipStart = true;
-            // Reload the scene
-            Invoke(nameof(ReloadScene), _loadDelay);
+            Invoke(nameof(ReloadCurrentScene), _loadDelay);
         }
         else
         {
             // Endgame
-            Debug.Log("Endgame");
+            Invoke(nameof(Endgame), _loadDelay);
         }
     }
 
@@ -67,9 +77,15 @@ public class GameManager : MonoBehaviour
         CreateFloatingScore(_rotationScore, pos);
     }
 
-    private void ReloadScene()
+    private void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(1); // Reload the scene hoangxuan
+        skipStart = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Endgame()
+    {
+        SceneManager.LoadScene("EndGame");
     }
 
     private void ChangeScore(int scoreChange)
@@ -77,6 +93,7 @@ public class GameManager : MonoBehaviour
         _currentScore += scoreChange;
         Debug.Log("Score: " + _currentScore);
         // Update UI
+        ScoreUIManager.Instance.UpdateScore(_currentScore);
     }
 
     private void CreateFloatingScore(int score, Vector3 pos)

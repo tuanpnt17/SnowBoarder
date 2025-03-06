@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _torqueAmount = 20f;
+    private float _torqueAmount = 50f;
 
     [SerializeField]
     private float _boostSpeed = 50f;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private bool _canMove = true;
     private Vector2 _previousRight;
     private float _angle;
+    private float _torqueInput;
 
     private void Start()
     {
@@ -31,9 +32,17 @@ public class PlayerController : MonoBehaviour
     {
         if (_canMove)
         {
-            RotatePlayer();
+            RespondToRotation();
             RespondToBoost();
             CheckRotationForPoints();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (_canMove)
+        {
+            RotatePlayer();
         }
     }
 
@@ -74,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     private void RespondToBoost()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey("w"))
         {
             _surfaceEffector2D.speed = _boostSpeed * _speedMultiplier;
         }
@@ -84,16 +93,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RespondToRotation()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey("a"))
+        {
+            _torqueInput = _torqueAmount;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey("d"))
+        {
+            _torqueInput = -_torqueAmount;
+        }
+        else
+        {
+            _torqueInput = 0f;
+        }
+    }
+
     private void RotatePlayer()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            _rb2d.AddTorque(_torqueAmount);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            _rb2d.AddTorque(-_torqueAmount);
-        }
+        _rb2d.AddTorque(_torqueInput);
     }
 
     private void CheckRotationForPoints()
