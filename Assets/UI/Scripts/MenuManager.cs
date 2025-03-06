@@ -44,8 +44,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnPlayPress()
     {
-       
-        //SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level_02");
     }
 
     public void OnExitPress()
