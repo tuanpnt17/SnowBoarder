@@ -44,14 +44,12 @@ public class GameManager : MonoBehaviour
         _currentHealth--;
         if (_currentHealth > 0)
         {
-            skipStart = true;
-            // Reload the scene
-            Invoke(nameof(ReloadScene), _loadDelay);
+            Invoke(nameof(ReloadCurrentScene), _loadDelay);
         }
         else
         {
             // Endgame
-            Debug.Log("Endgame");
+            Invoke(nameof(Endgame), _loadDelay);
         }
     }
 
@@ -67,9 +65,15 @@ public class GameManager : MonoBehaviour
         CreateFloatingScore(_rotationScore, pos);
     }
 
-    private void ReloadScene()
+    private void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(1); // Reload the scene hoangxuan
+        skipStart = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Endgame()
+    {
+        SceneManager.LoadScene("Endgame");
     }
 
     private void ChangeScore(int scoreChange)
