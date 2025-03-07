@@ -943,10 +943,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " CONTROLS\n\r\n- Move Left: A or Left Arrow\r\n- Move Right: D or Right
-    Arrow\r\n- Move Forward: W or Up Arrow\n\n OBJECTIVE\n\n- Reach the finish flag\n-
-    Complete all 3 levels!\n- Players gain +10 points for every coin they collect.\r\n-
-    Performing a 360-degree flip grants +50 points\r\n"
+  m_text: " CONTROLS\n\r\n- Rotate to Left: A or Left Arrow\r\n- Rotate to Right:
+    D or Right Arrow\r\n- Increase speed: W or Up Arrow\n\n OBJECTIVE\n\n- Reach
+    the finish flag\n- Complete all 3 levels!\n- Players gain +10 points for every
+    coin they collect.\r\n- Performing a 360-degree flip grants +50 points\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96d597c82314b684ab9b9a5b9c1a317a, type: 2}
   m_sharedMaterial: {fileID: -8201099655942785041, guid: 96d597c82314b684ab9b9a5b9c1a317a, type: 2}
